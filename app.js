@@ -12,9 +12,16 @@ var express = require('express');
 // for more info, see: https://www.npmjs.com/package/cfenv
 var cfenv = require('cfenv');
 
+//other dependencies to use SSO
+var passport = require('passport');
+var cookieParser = require('cookie-parser');
+var session = require('express-session');
+var OpenIDConnectStrategy = require('passport-idaas-openidconnect').IDaaSOIDCStrategy;
+
 // create a new express server
 var app = express();
 
+/*Boiler code start//
 // serve the files out of ./public as our main files
 app.use(express.static(__dirname + '/public'));
 
@@ -26,3 +33,7 @@ app.listen(appEnv.port, '0.0.0.0', function() {
   // print a message when the server starts listening
   console.log("server starting on " + appEnv.url);
 });
+//Boiler code end*/
+
+
+
