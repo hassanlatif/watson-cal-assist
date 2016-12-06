@@ -1,1 +1,7 @@
-node_modules
+node_modules/.bin
+node_modules/body-parser
+node_modules/cfenv
+node_modules/cookie-parser
+node_modules/express
+node_modules/express-session
+node_modules/passport
