@@ -21,7 +21,7 @@ var OpenIDConnectStrategy = require('passport-idaas-openidconnect').IDaaSOIDCStr
 // create a new express server
 var app = express();
 
-/*Boiler code start//
+//Boiler code start//
 // serve the files out of ./public as our main files
 app.use(express.static(__dirname + '/public'));
 
@@ -33,7 +33,7 @@ app.listen(appEnv.port, '0.0.0.0', function() {
   // print a message when the server starts listening
   console.log("server starting on " + appEnv.url);
 });
-//Boiler code end*/
+//Boiler code end/
 
 
 
