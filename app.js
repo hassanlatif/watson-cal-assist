@@ -85,12 +85,15 @@ app.get('/auth/sso/callback', function(req, res, next) {
 
 app.get('/hello', ensureAuthenticated, function(req, res) {
 	console.log(req.user);
-    res.send('Hello, '+ req.user['displayName'] + '!\n' + '<a href="/logout">Log Out</a>');
+    res.send('Hello, '+ req.user + '!\n' + '<a href="/logout">Log Out</a>');
 });	
 
 app.get('/logout', function(req, res){
     req.logout();
-    res.redirect('/');
+    //res.redirect('/');
+
+     res.redirect('https://' + issuer_id +
+                  '/idaas/mtfim/sps/idaas/logout');
 });
 
 app.get('/failure', function(req, res) {
