@@ -11,7 +11,8 @@
     "cookie-parser": "latest",
     "express": "^4.13.4",
     "express-session": "latest",
-    "passport": "latest"
+    "passport": "latest",
+    "passport-idaas-openidconnect": "latest"
   },
   "repository": {},
   "engines": {
