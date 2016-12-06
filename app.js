@@ -15,14 +15,12 @@ var cfenv = require('cfenv');
 //other dependencies to use SSO
 var passport = require('passport');
 var cookieParser = require('cookie-parser');
-var bodyParser = require('body-parser');
 var session = require('express-session');
 var OpenIDConnectStrategy = require('passport-idaas-openidconnect').IDaaSOIDCStrategy;
 
 // create a new express server
 var app = express();
 app.use(cookieParser());
-app.use(bodyParser());
 app.use(session({ secret: 'keyboard cat', resave: false, saveUninitialized: true }));
 app.use(passport.initialize());
 app.use(passport.session());
@@ -86,6 +84,7 @@ app.get('/auth/sso/callback', function(req, res, next) {
 });
 
 app.get('/hello', ensureAuthenticated, function(req, res) {
+	console.log(req.user);
     res.send('Hello, '+ req.user['id'] + '!\n' + '<a href="/logout">Log Out</a>');
 });	
 
