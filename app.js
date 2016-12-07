@@ -48,7 +48,7 @@ var Strategy = new OpenIDConnectStrategy({
                 authorizationURL : authorization_url,
                 tokenURL : token_url,
                 clientID : client_id,
-                scope : 'email',
+                scope : 'openid',
                 response_type : 'code',
                 clientSecret : client_secret,
                 callbackURL : callback_url,
