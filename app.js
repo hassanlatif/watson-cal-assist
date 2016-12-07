@@ -41,7 +41,7 @@ var client_secret = ssoConfig.credentials.secret;
 var authorization_url = ssoConfig.credentials.authorizationEndpointUrl;
 var token_url = ssoConfig.credentials.tokenEndpointUrl;
 var issuer_id = ssoConfig.credentials.issuerIdentifier;
-var callback_url = 'https://watson-cal-assist.mybluemix.net/auth/sso/callback';
+var callback_url = 'http://watson-cal-assist.mybluemix.net/auth/sso/callback';
 
 var OpenIDConnectStrategy = require('passport-idaas-openidconnect').IDaaSOIDCStrategy;
 var Strategy = new OpenIDConnectStrategy({
@@ -87,7 +87,7 @@ app.get('/hello', ensureAuthenticated, function(req, res) {
 	console.log('---------------- User Start -----------------');
 	console.log(req.user);
 	console.log('---------------- User End -------------------');
-    res.send('Hello, '+ req.session.user['id'] + '!\n' + '<a href="/logout">Log Out</a>');
+    res.send('Hello, '+ req.user['id'] + '!\n' + '<a href="/logout">Log Out</a>');
 });	
 
 app.get('/logout', function(req, res){
