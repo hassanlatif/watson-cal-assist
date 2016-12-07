@@ -87,7 +87,7 @@ app.get('/hello', ensureAuthenticated, function(req, res) {
 	console.log('---------------- User Start -----------------');
 	console.log(req.user);
 	console.log('---------------- User End -------------------');
-    res.send('Hello, '+ req.user['id'] + '!\n' + '<a href="/logout">Log Out</a>');
+    res.send('Hello, '+ req.user['emailAddress'] + '!\n' + '<a href="/logout">Log Out</a>');
 });	
 
 app.get('/logout', function(req, res){
