@@ -84,7 +84,9 @@ app.get('/auth/sso/callback', function(req, res, next) {
 });
 
 app.get('/hello', ensureAuthenticated, function(req, res) {
+	console.log('---------------- User Start -----------------');
 	console.log(req.user);
+	console.log('---------------- User End -------------------');
     res.send('Hello, '+ req.session.user['id'] + '!\n' + '<a href="/logout">Log Out</a>');
 });	
 
