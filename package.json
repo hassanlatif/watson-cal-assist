@@ -12,7 +12,10 @@
     "express": "^4.13.4",
     "express-session": "latest",
     "passport": "latest",
-    "passport-idaas-openidconnect": "latest"
+    "passport-idaas-openidconnect": "latest",
+    "passport-oauth": "latest",
+    "passport-ibmid-oauth2": "latest"
+
   },
   "repository": {},
   "engines": {
